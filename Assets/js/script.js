@@ -2,24 +2,25 @@
 // the code isn't run until the browser has finished rendering all the elements
 // in the html.
 var timer = document.getElementById("timeTracker");
+$("#currentDay").html(timer);
 $(function () {
 
 function displayTime () {
-  var now = dayjs().format('MMMM, D, YYYY HH:mm:ss ');
+  var now = dayjs().format('MMMM, D, YYYY HH:mm:ss a');
   timer.textContent = now;
 }
 displayTime ();
 setInterval(displayTime, 1000);
 
 $(".saveBtn").on("click", function () {
-  var text = $(this).siblings(".description").val();
+  var text = $(this).siblings("textarea").val();
   var time = $(this).parent().attr("id");
 
   localStorage.setItem(time, text);
 })
 
 function timeKeep () {
-  var timeNow = dayjs ().hour();
+  var timeNow = dayjs();
 
   $(".time-block").each(function ()  {
     var blockTime = parseInt($(this).attr("id").split("hour")[1]);
@@ -42,11 +43,18 @@ function timeKeep () {
     }
       
     }) 
+    
 } 
-  
-  
-      
-      
+$("#hour-9 textarea").val(localStorage.getItem("hour-9"));
+$("#hour-10 textarea").val(localStorage.getItem("hour-10")); 
+$("#hour-11 textarea").val(localStorage.getItem("hour-11"));
+$("#hour-12 textarea").val(localStorage.getItem("hour-12"));    
+$("#hour-13 textarea").val(localStorage.getItem("hour-13"));
+$("#hour-14 textarea").val(localStorage.getItem("hour-14"));
+$("#hour-15 textarea").val(localStorage.getItem("hour-15"));
+$("#hour-16 textarea").val(localStorage.getItem("hour-16"));
+$("#hour-17 textarea").val(localStorage.getItem("hour-17"));
+ 
       
       
     
