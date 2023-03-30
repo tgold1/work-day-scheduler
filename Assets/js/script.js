@@ -5,7 +5,7 @@ var timer = document.getElementById("timeTracker");
 $(function () {
 
 function displayTime () {
-  var now = dayjs().format('MMMM, D, YYYY hh:mm:ss a');
+  var now = dayjs().format('MMMM, D, YYYY HH:mm:ss ');
   timer.textContent = now;
 }
 displayTime ();
@@ -23,6 +23,10 @@ function timeKeep () {
 
   $(".time-block").each(function ()  {
     var blockTime = parseInt($(this).attr("id").split("hour")[1]);
+    
+    if (blockTime < timeNow) {
+      $(this).removeClass("future");
+    }
   })
 }
 
