@@ -11,7 +11,7 @@ To use the work day scheduler you will see the current date and time as the page
 
 The deployed page is here: https://tgold1.github.io/work-day-scheduler/
 
-![Alt text]("./Assets/Images/screenshot.png")
+![Alt text](./Assets/Images/screenshot.png)
 
 ## Collaborators
 N/A 
