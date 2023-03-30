@@ -26,9 +26,32 @@ function timeKeep () {
     
     if (blockTime < timeNow) {
       $(this).removeClass("future");
+      $(this).removeClass("present");
+      $(this).addClass("past");
     }
-  })
-}
+
+    else if (blockTime === timeNow) {
+      $(this).removeClass("past");
+      $(this).removeClass("future");
+      $(this).addClass("present");
+  }
+    else { (blockTime > timeNow) ;
+      $(this).removeClass("present");
+      $(this).removeClass("past");
+      $(this).addClass("future");
+    }
+      
+    }) 
+} 
+  
+  
+      
+      
+      
+      
+    
+  
+
 
 
   // TODO: Add a listener for click events on the save button. This code should
@@ -49,4 +72,5 @@ function timeKeep () {
   // attribute of each time-block be used to do this?
   //
   // TODO: Add code to display the current date in the header of the page.
-});
+  timeKeep ();
+})
